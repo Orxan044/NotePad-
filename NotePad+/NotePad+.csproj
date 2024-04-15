@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <RootNamespace>NotePad_</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Night_Background.png" />
+    <None Remove="Images\NotePadLogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Night_Background.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\NotePadLogo.png" />
+  </ItemGroup>
+
+</Project>
