@@ -9,16 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\Night_Background.png" />
     <None Remove="Images\NotePadLogo.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Images\Night_Background.png" />
+    <None Remove="Images\up-arrow.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Images\NotePadLogo.png" />
+    <Resource Include="Images\up-arrow.png" />
   </ItemGroup>
 
 </Project>

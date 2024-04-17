@@ -5,21 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotePad_"
         mc:Ignorable="d"
-        Title="NotePad++" Height="282" Width="464"
+        Title="NotePad++" Height="350" Width="560"
         Icon="Images\NotePadLogo.png" >
 
-    <Grid>
-        <Grid Margin="82,49,82,68">
+    <Grid >
+        <Grid Margin="82,49,58,68" RenderTransformOrigin="0.5,0.5">
             <Grid.RowDefinitions>
                 <RowDefinition ></RowDefinition>
                 <RowDefinition Height="4*"></RowDefinition>
             </Grid.RowDefinitions>
 
             <WrapPanel Grid.Row="0" Background="#0434e7" >
-                <TextBox Background="White" Width="100"  Height="20" Margin="5" />
-                <Button Background="Transparent" Foreground="White" Width="30" Content="//" Height="20"  />
+                <TextBox x:Name="txtBoxFileName" Background="White"  FontSize="18" Width="100" FontFamily="Bold"  Height="28" Margin="5,5,0,5" />
+                <Button Background="Transparent"  Foreground="White" FontFamily="Bold" Width="30" Height="27" Click="GetFilePath_Click" >
+                    <Image Source="Images\up-arrow.png" ></Image>
+                </Button>
+                <Button Background="Transparent" Foreground="White" FontFamily="Bold" Width="38" Content="Save" Height="22" Margin="5" Click="SaveFile_Click" />
+                <Expander Height="22">
+                    <CheckBox Margin="30,-20,0,0" FontSize="15" FontFamily="Bold" Foreground="Yellow" Width="92" >Auto Save</CheckBox>
+                </Expander>
+                <Button Background="Transparent" Foreground="White" FontFamily="Bold" Width="38" Content="Cut" Height="22" Margin="1"  />
+                <Button Background="Transparent" Foreground="White" FontFamily="Bold" FontSize="12" Width="38" Content="Copy" Height="22" Margin="1"  />
+                <Button Background="Transparent" Foreground="White" FontFamily="Bold" FontSize="12" Width="38" Content="Paste" Height="22" Margin="1"  />
+                <Button Background="Transparent" Foreground="White" FontFamily="Bold" FontSize="12" Width="58" Content="Select All" Height="22" Margin="1" />
             </WrapPanel>
-            
+            <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  >
+                <TextBox x:Name="txtBox" Grid.Row="1" AcceptsReturn="True" FontSize="20" FontFamily="Bold" FontWeight="Black" BorderBrush="#0490e7" BorderThickness="10"/>
+            </ScrollViewer>
+
+
         </Grid>
     </Grid>
 </Window>
