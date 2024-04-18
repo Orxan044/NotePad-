@@ -1,6 +1,8 @@
 ﻿using Microsoft.Win32;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace NotePad_;
 
@@ -32,16 +34,42 @@ public partial class MainWindow : Window
 
     private void SaveFile_Click(object sender, RoutedEventArgs e)
     {
-        if (txtBoxFileName is not null)
+        string? fileName = txtBoxFileName.Text;
+        string? regexFileName = @"(\.json|\.txt)$";
+        if (Regex.IsMatch(fileName, regexFileName))
         {
-            File.WriteAllText($"{txtBoxFileName}.txt",txtBox.Text);
-            MessageBox.Show("File Save");
-
+            File.WriteAllText(fileName, txtBox.Text);
+            MessageBox.Show("File Saveing");
         }
         else
-            MessageBox.Show("File Name Not Null");
-
-
+            MessageBox.Show("File Name is not correct");
     }
 
+
+    private void TxtBox_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        if (checkBox.IsChecked == true)
+        {
+            string? fileName = txtBoxFileName.Text;
+            string? regexFileName = @"(\.json|\.txt)$";
+            if (Regex.IsMatch(fileName, regexFileName))
+            {
+                File.WriteAllText(fileName, txtBox.Text);
+            }
+        }
+    }
+
+    private void TxtBox_CanToClick(object sender, RoutedEventArgs e)
+    {
+        Button btn = (Button)sender;
+
+        if (btn.Name == "Cut") txtBox.Cut();
+        if (btn.Name == "Copy") txtBox.Copy();
+        if (btn.Name == "Paste") txtBox.Paste();
+        if (btn.Name == "Select_All") txtBox.SelectAll();
+        
+
+    }
 }
+
+
