@@ -6,9 +6,16 @@
         xmlns:local="clr-namespace:NotePad_"
         mc:Ignorable="d"
         Title="NotePad++" Height="350" Width="560"
-        Icon="Images\NotePadLogo.png" >
+        Icon="Images\NotePadLogo.png"
+        WindowStartupLocation="CenterScreen">
 
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="Yellow" ></GradientStop>
+                <GradientStop Color="Blue" Offset="1"></GradientStop>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid Margin="82,49,58,68" RenderTransformOrigin="0.5,0.5">
             <Grid.RowDefinitions>
                 <RowDefinition ></RowDefinition>
